@@ -18,6 +18,7 @@
 
 	<header>
 		<h1>Mi Tienda</h1>
+		<button class="btn btn-primary" onclick="carrito.showModal()">🛒 Carrito</button>
 	</header>
 
 	<main>
@@ -125,6 +126,14 @@
 			</div>
 		</div>
 	</main>
+
+	<dialog id="carrito" class="modal-cart">
+		<h2>Tu carrito</h2>
+		<p>Tu carrito está vacío.</p>
+		<form method="dialog">
+			<button class="btn btn-secondary">Cerrar</button>
+		</form>
+	</dialog>
 
 </body>
 
