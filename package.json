@@ -1,0 +1,24 @@
+{
+  "name": "laboratorio-aplicaciones-web-cliente",
+  "version": "1.0.0",
+  "description": "Proyecto E-commerce - Laboratorio de Aplicaciones Web Cliente",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jorchu2025/laboratorio-aplicaciones-web-cliente.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jorchu2025/laboratorio-aplicaciones-web-cliente/issues"
+  },
+  "homepage": "https://github.com/Jorchu2025/laboratorio-aplicaciones-web-cliente#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}
