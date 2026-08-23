@@ -3,3 +3,14 @@ main {
     padding: 10px;
     justify-items: center;
 }
+
+.modal-cart {
+    border: none;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 320px;
+}
+
+.modal-cart::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
