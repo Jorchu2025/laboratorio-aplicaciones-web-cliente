@@ -1,7 +1,5 @@
 main {
     border: solid black;
     padding: 10px;
-    justify-content: center;
-    display: grid;
-
+    justify-items: center;
 }
