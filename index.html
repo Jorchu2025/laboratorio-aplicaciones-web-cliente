@@ -126,7 +126,30 @@
 			</div>
 		</div>
 	</main>
+<dialog id="detalle-producto" class="modal-detalle">
+    <div class="modal-detalle-contenido">
 
+        <h2>Detalle del producto</h2>
+
+        <img src="/public/images/apple.webp" 
+             alt="Imagen del producto" 
+             class="modal-detalle-imagen">
+
+        <h3>Nombre del producto</h3>
+
+        <p class="modal-detalle-precio">$99.999</p>
+
+        <p class="modal-detalle-descripcion">
+            Descripción del producto. Aquí se mostrará información
+            detallada sobre sus características.
+        </p>
+
+        <form method="dialog">
+            <button class="btn btn-secondary">Cerrar</button>
+        </form>
+
+    </div>
+</dialog>
 	<dialog id="carrito" class="modal-cart">
 		<h2>Tu carrito</h2>
 		<p>Tu carrito está vacío.</p>

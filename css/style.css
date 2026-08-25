@@ -14,3 +14,35 @@ main {
 .modal-cart::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
+
+.modal-detalle {
+    border: none;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 320px;
+    max-width: 500px;
+}
+
+.modal-detalle::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-detalle-contenido {
+    text-align: center;
+}
+
+.modal-detalle-imagen {
+    width: 200px;
+    max-width: 100%;
+    margin: 15px auto;
+    display: block;
+}
+
+.modal-detalle-precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-detalle-descripcion {
+    margin: 15px 0;
+}
