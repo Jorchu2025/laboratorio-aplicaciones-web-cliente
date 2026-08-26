@@ -46,3 +46,9 @@ main {
 .modal-detalle-descripcion {
     margin: 15px 0;
 }
+
+.category {
+    border-radius: 9999px;
+    background-color: white;
+    color: #222;
+}
