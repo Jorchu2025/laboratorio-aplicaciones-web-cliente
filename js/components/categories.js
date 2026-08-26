@@ -20,7 +20,7 @@ export async function fetchAndRenderCategories(products, renderCards) {
   const categories = await fetch('https://fakestoreapi.com/products/categories')
     .then((res) => res.json());
 
-  const container = document.querySelector('#categories');
+  const container = document.querySelector('#category-buttons');
 
   // Primero se renderiza la opción 'Todas' porque es un caso especial,
   // ya que no filtra los productos y se inicializa con el atributo `checked`.
