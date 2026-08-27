@@ -4,6 +4,30 @@ main {
     justify-items: center;
 }
 
+.card {
+    height: 100%;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .modal-cart {
     border: none;
     border-radius: 8px;
