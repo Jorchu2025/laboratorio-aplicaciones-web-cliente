@@ -33,10 +33,13 @@ main {
 
 .modal-detalle-imagen {
     width: 200px;
+    height: 200px;
+    object-fit: contain;
     max-width: 100%;
     margin: 15px auto;
     display: block;
 }
+
 
 .modal-detalle-precio {
     font-size: 1.5rem;
@@ -46,3 +49,23 @@ main {
 .modal-detalle-descripcion {
     margin: 15px 0;
 }
+.modal-detalle button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-detalle {
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+.modal-detalle::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
