@@ -11,6 +11,8 @@
 		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 		crossorigin="anonymous"></script>
 
+	<script type="module" defer src="js/api/api.js"></script>
+	<script type="module" src="js/products/products.js"></script>
 	<title>Mi Tienda</title>
 </head>
 
@@ -23,8 +25,10 @@
 
 	<main>
 		<p>Bienvenidos a nuestra tienda online.</p>
-		<div class="row container container-fluid gap-3">
-			<div class="card" style="width: 18rem;">
+		<div id="prod-container" class="row container container-fluid gap-3">
+
+			<!-- card de ejemplo -->
+			<!-- <div class="card" style="width: 18rem;">
 				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -33,124 +37,32 @@
 					<a href="#" class="btn btn-primary">Go somewhere</a>
 
 				</div>
-			</div>
+			</div> -->
 
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-
-			<div class="card" style="width: 18rem;">
-				<img src="/public/images/apple.webp" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-						card’s content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
 		</div>
 	</main>
-<dialog id="detalle-producto" class="modal-detalle">
-    <div class="modal-detalle-contenido">
+	<dialog id="detalle-producto" class="modal-detalle">
+		<div class="modal-detalle-contenido">
 
-        <h2>Detalle del producto</h2>
+			<h2>Detalle del producto</h2>
 
-        <img src="/public/images/apple.webp" 
-             alt="Imagen del producto" 
-             class="modal-detalle-imagen">
+			<img src="/public/images/apple.webp" alt="Imagen del producto" class="modal-detalle-imagen">
 
-        <h3>Nombre del producto</h3>
+			<h3>Nombre del producto</h3>
 
-        <p class="modal-detalle-precio">$99.999</p>
+			<p class="modal-detalle-precio">$99.999</p>
 
-        <p class="modal-detalle-descripcion">
-            Descripción del producto. Aquí se mostrará información
-            detallada sobre sus características.
-        </p>
+			<p class="modal-detalle-descripcion">
+				Descripción del producto. Aquí se mostrará información
+				detallada sobre sus características.
+			</p>
 
-        <form method="dialog">
-            <button class="btn btn-secondary">Cerrar</button>
-        </form>
+			<form method="dialog">
+				<button class="btn btn-secondary">Cerrar</button>
+			</form>
 
-    </div>
-</dialog>
+		</div>
+	</dialog>
 	<dialog id="carrito" class="modal-cart">
 		<h2>Tu carrito</h2>
 		<p>Tu carrito está vacío.</p>
