@@ -23,7 +23,7 @@ async function getProducts() {
   products = await getData();
   renderCards(products);
 }
-getProducts();
+await getProducts();
 
 export { products, renderCards };
 

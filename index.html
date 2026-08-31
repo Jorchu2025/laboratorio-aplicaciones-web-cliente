@@ -13,6 +13,7 @@
 
 	<script type="module" defer src="js/api/api.js"></script>
 	<script type="module" src="js/products/products.js"></script>
+	<script type="module" src="js/components/categories.js"></script>
 	<title>Mi Tienda</title>
 </head>
 
@@ -27,19 +28,7 @@
 		<p>Bienvenidos a nuestra tienda online.</p>
 		<div class="container m-4" id="categories">
 			<h5 class="my-3">Categorías</h5>
-			<div class="d-flex flex-wrap gap-1 row-gap-1" id="category-buttons">
-				<input type="radio" class="btn-check" name="categories" id="todas" autocomplete="off" checked>
-				<label class="btn btn-secondary category" for="todas">Todas</label>
-				
-				<input type="radio" class="btn-check" name="categories" id="ropa" autocomplete="off">
-				<label class="btn btn-secondary category" for="ropa">Ropa</label>
-				
-				<input type="radio" class="btn-check" name="categories" id="electrónica" autocomplete="off">
-				<label class="btn btn-secondary category" for="electrónica">Electrónica</label>
-				
-				<input type="radio" class="btn-check" name="categories" id="deportes" autocomplete="off">
-				<label class="btn btn-secondary category" for="deportes">Deportes</label>
-			</div>
+			<div class="d-flex flex-wrap gap-1 row-gap-1" id="category-buttons"></div>
 		</div>
 		<div class="row container container-fluid gap-3">
 			<div class="card" style="width: 18rem;">
