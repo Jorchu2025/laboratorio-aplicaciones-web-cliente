@@ -94,6 +94,10 @@ main {
     background: rgba(0, 0, 0, 0.5);
 }
 
+#search-input {
+    max-width: 400px;
+}
+
 .category {
     border-radius: 9999px;
     background-color: white;
