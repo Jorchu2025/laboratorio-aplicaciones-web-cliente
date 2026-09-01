@@ -25,6 +25,17 @@ async function getProducts() {
 }
 await getProducts();
 
+let searchInput = document.getElementById("search-input");
+searchInput.addEventListener("input", function () {
+  let query = searchInput.value.toLowerCase();
+  let filtered = products.filter(
+    (p) =>
+      p.title.toLowerCase().includes(query) ||
+      p.description.toLowerCase().includes(query)
+  );
+  renderCards(filtered);
+});
+
 export { products, renderCards };
 
 // modal de detalle del producto
