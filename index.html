@@ -20,30 +20,54 @@
 <body>
 
 	<header>
-		<h1>Mi Tienda</h1>
-		<button class="btn btn-primary" onclick="carrito.showModal()">🛒 Carrito</button>
+		<nav aria-label="Navegación principal">
+			<h1>Mi Tienda</h1>
+			<button class="btn btn-primary" onclick="carrito.showModal()">
+				🛒 Carrito
+			</button>
+		</nav>
 	</header>
 
 	<main>
 		<p>Bienvenidos a nuestra tienda online.</p>
-		<div class="container m-4" id="categories">
-			<h5 class="my-3">Categorías</h5>
-			<div class="d-flex flex-wrap gap-1 row-gap-1" id="category-buttons"></div>
-		</div>
-		<div class="container m-4">
-			<input type="text" id="search-input" class="form-control" placeholder="Buscar productos...">
-		</div>
-		<div id="prod-container" class="row container container-fluid gap-3"></div>
-			</div> -->
 
-				</div>
+		<section class="container m-4" id="categories" aria-labelledby="categories-title">
+			<h2 class="h5 my-3" id="categories-title">Categorías</h2>
+			<div class="d-flex flex-wrap gap-1 row-gap-1" id="category-buttons"></div>
+		</section>
+
+		<section class="container m-4" aria-labelledby="search-title">
+			<h2 class="visually-hidden" id="search-title">Buscar productos</h2>
+
+			<input
+				type="search"
+				id="search-input"
+				class="form-control"
+				placeholder="Buscar productos..."
+				aria-label="Buscar productos"
+			>
+		</section>
+
+		<section aria-labelledby="products-title">
+			<h2 class="visually-hidden" id="products-title">Catálogo de Productos</h2>
+			<div id="prod-container" class="row container container-fluid gap-3"></div>
+		</section>
 	</main>
+
+	<footer>
+		<p>&copy; 2026 Mi Tienda</p>
+	</footer>
+
+
 	<dialog id="detalle" class="modal-detalle">
 		<div class="modal-detalle-contenido">
-
 			<h2>Detalle del producto</h2>
 
-			<img src="/public/images/apple.webp" alt="Imagen del producto" class="modal-detalle-imagen">
+			<img
+				src="/public/images/apple.webp"
+				alt="Imagen del producto"
+				class="modal-detalle-imagen"
+			>
 
 			<h3>Nombre del producto</h3>
 
@@ -57,17 +81,17 @@
 			<form method="dialog">
 				<button class="btn btn-secondary">Cerrar</button>
 			</form>
-
 		</div>
 	</dialog>
+
 	<dialog id="carrito" class="modal-cart">
 		<h2>Tu carrito</h2>
 		<p>Tu carrito está vacío.</p>
+
 		<form method="dialog">
 			<button class="btn btn-secondary">Cerrar</button>
 		</form>
 	</dialog>
 
 </body>
-
 </html>
