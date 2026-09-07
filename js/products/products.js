@@ -1,4 +1,5 @@
 import { getData } from "/js/api/api.js";
+import { saveToLocalStorage } from "../storage/storage.js";
 
 let prodContainer = document.getElementById("prod-container");
 let products = [];
@@ -12,7 +13,9 @@ function renderCards(products) {
         <div class="card-body">
           <h5 class="card-title">${p.title}</h5>
           <p class="card-text">${p.description}</p>
-          <a href="#" onclick="detalle.showModal()" class="btn btn-primary">Ver producto</a>
+          <button type="button" class="btn btn-primary btn-agregar">
+    Agregar al carrito
+</button>
         </div>
       </div>
     `;
@@ -21,9 +24,19 @@ function renderCards(products) {
 
 async function getProducts() {
   products = await getData();
+  console.log(products);
   renderCards(products);
 }
 await getProducts();
+document.querySelectorAll(".btn-agregar").forEach((button, index) => {
+    button.addEventListener("click", () => {
+        saveToLocalStorage(products[index]);
+    });
+});
+
+
+
+
 
 let searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", function () {

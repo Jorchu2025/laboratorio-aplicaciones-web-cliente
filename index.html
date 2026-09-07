@@ -13,6 +13,7 @@
 
 	<script type="module" defer src="js/api/api.js"></script>
 	<script type="module" src="js/products/products.js"></script>
+	<script type="module" src="/js/app.js" defer></script>
 	<script type="module" src="js/components/categories.js"></script>
 	<title>Mi Tienda</title>
 </head>
@@ -21,7 +22,7 @@
 
 	<header>
 		<h1>Mi Tienda</h1>
-		<button class="btn btn-primary" onclick="carrito.showModal()">🛒 Carrito</button>
+		<button id="btn-carrito" class="btn btn-primary" >🛒 Carrito</button>
 	</header>
 
 	<main>
@@ -34,7 +35,7 @@
 			<input type="text" id="search-input" class="form-control" placeholder="Buscar productos...">
 		</div>
 		<div id="prod-container" class="row container container-fluid gap-3"></div>
-			</div> -->
+			
 
 				</div>
 	</main>
@@ -61,13 +62,29 @@
 		</div>
 	</dialog>
 	<dialog id="carrito" class="modal-cart">
-		<h2>Tu carrito</h2>
-		<p>Tu carrito está vacío.</p>
-		<form method="dialog">
-			<button class="btn btn-secondary">Cerrar</button>
-		</form>
-	</dialog>
 
+    <h2>Tu carrito</h2>
+
+    <div id="carrito-contenido">
+
+        <p id="carrito-vacio">Tu carrito está vacío.</p>
+
+        <div id="lista-carrito">
+            <!-- Aquí aparecerán los productos -->
+        </div>
+
+        <div id="carrito-total">
+            <strong>Total: $0</strong>
+        </div>
+
+    </div>
+
+    <form method="dialog">
+        <button class="btn btn-secondary">Cerrar</button>
+    </form>
+
+</dialog>
+<script type="module" src="/js/products/products.js"></script>
 </body>
 
 </html>

@@ -5,8 +5,9 @@ export function initLocalStorage() {
 }
 
 export function getFromLocalStorage() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY));
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
+
 
 export function saveToLocalStorage(item) {
   const cart = getFromLocalStorage();
