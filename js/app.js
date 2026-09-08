@@ -2,7 +2,8 @@
 import {
     getFromLocalStorage,
     setItemToLocalStorage,
-    updateItemStorage
+    updateItemStorage,
+    deleteItemStorage
 } from "./storage/storage.js";
 
 const carrito = document.getElementById("carrito");
@@ -34,7 +35,7 @@ setItemToLocalStorage(productosCarrito);
     let total = 0;
 
     productosCarrito.forEach((producto) => {
-        total += producto.price;
+        total += producto.price * producto.qtty;
 
         const div = document.createElement("div");
        div.classList.add("item-carrito");
@@ -46,10 +47,10 @@ setItemToLocalStorage(productosCarrito);
     </p>
 
     <div class="controles-carrito">
-        <button type="button">−</button>
+        <button type="button" class="btn-restar">−</button>
         <span>${producto.qtty}</span>
         <button type="button" class="btn-sumar">+</button>
-        <button type="button">Eliminar</button>
+        <button type="button" class="btn-eliminar">Eliminar</button>
     </div>
 `;
 
@@ -60,6 +61,20 @@ setItemToLocalStorage(productosCarrito);
     updateItemStorage(producto.id, 1);
     mostrarCarrito();
 });
+
+
+div.querySelector(".btn-restar").addEventListener("click", () => {
+    if (producto.qtty > 1) {
+        updateItemStorage(producto.id, -1);
+        mostrarCarrito();
+    }
+});
+
+div.querySelector(".btn-eliminar").addEventListener("click", () => {
+    deleteItemStorage(producto.id);
+    mostrarCarrito();
+});
+
 });
 
     carritoTotal.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
@@ -77,5 +92,7 @@ if (btnCarrito) {
 } else {
     alert("NO ENCUENTRO EL BOTÓN");
 }
+
+
 
 

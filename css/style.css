@@ -142,3 +142,44 @@ main {
     background-color: white;
     color: #222;
 }
+
+.controles-carrito {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.controles-carrito button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controles-carrito span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-restar,
+.btn-sumar {
+    background-color: #f1f3f5;
+    color: #212529;
+    font-weight: bold;
+}
+
+#carrito-total {
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #212529;
+    font-size: 1.2rem;
+}
+
