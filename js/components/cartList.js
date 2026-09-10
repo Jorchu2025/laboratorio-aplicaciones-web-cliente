@@ -20,7 +20,7 @@ export function cartList() {
                 <h5 class="card-title">${item.title}</h5>
                 <p class="card-text">Cantidad: ${item.qtty}</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-body-secondary">Precio: $${item.price.toFixed(2)}</small>
+                  <small class="text-body-secondary">Total: $${(item.price * item.qtty).toFixed(2)}</small>
                   <button class="btn btn-outline-danger border-0" id="delete-item-${item.id}"><i class="bi bi-trash-fill"></i></button>
                 </div>
               </div>
