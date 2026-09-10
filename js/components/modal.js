@@ -1,4 +1,5 @@
 import { saveToLocalStorage, updateItemStorage } from '../storage/storage.js';
+import { cartList } from './cartList.js';
 import { toast } from './toast.js';
 
 // Para llamar desde click listener del botón "Agregar al carrito"
@@ -11,6 +12,8 @@ function addToCart(prod) {
     prod.qtty = qtty;
     saveToLocalStorage(prod);
   }
+
+  cartList();
 
   toast(`${prod.title} agregado al carrito.`);
 }
