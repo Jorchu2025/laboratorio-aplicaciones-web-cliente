@@ -1,7 +1,10 @@
 const STORAGE_KEY = 'cart';
 
 export function initLocalStorage() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+  const cart = localStorage.getItem(STORAGE_KEY);
+  if (!cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+  }
 }
 
 export function getFromLocalStorage() {
