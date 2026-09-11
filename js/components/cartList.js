@@ -1,13 +1,25 @@
-import { deleteItemStorage, getFromLocalStorage } from '../storage/storage.js';
+import {
+  deleteItemStorage,
+  getFromLocalStorage,
+  clearLocalStorage,
+} from "../storage/storage.js";
 
 export function cartList() {
-  const cartListContainer = document.querySelector('#cart-list');
-  let template = '';
-  const dataStorage = getFromLocalStorage();
+  const cartListContainer = document.querySelector("#cart-list");
+  const clearCartBtn = document.querySelector("#btn-clear-cart");
+  let template = "";
+  const dataStorage = getFromLocalStorage() || [];
 
   if (dataStorage.length === 0) {
-    cartListContainer.innerHTML = '<p>Tu carrito está vacío.</p>';
+    cartListContainer.innerHTML = "<p>Tu carrito está vacío.</p>";
+    if (clearCartBtn) {
+      clearCartBtn.disabled = true;
+    }
   } else {
+    if (clearCartBtn) {
+      clearCartBtn.disabled = false;
+    }
+
     dataStorage.forEach((item) => {
       template += `
         <div class="card mb-3" style="max-width: 540px;">
@@ -29,15 +41,25 @@ export function cartList() {
         </div>
       `;
     });
-    
+
     cartListContainer.innerHTML = template;
 
     dataStorage.forEach((item) => {
       const deleteButton = document.querySelector(`#delete-item-${item.id}`);
-      deleteButton.addEventListener('click', () => {
-        deleteItemStorage(item.id);
-        cartList();
-      });
+      if (deleteButton) {
+        deleteButton.addEventListener("click", () => {
+          deleteItemStorage(item.id);
+          cartList();
+        });
+      }
     });
   }
+}
+
+const clearCartBtn = document.querySelector("#btn-clear-cart");
+if (clearCartBtn) {
+  clearCartBtn.addEventListener("click", () => {
+    clearLocalStorage();
+    cartList();
+  });
 }

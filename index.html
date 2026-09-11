@@ -67,9 +67,12 @@
 	<dialog id="carrito" class="modal-cart">
 		<h2>Tu carrito</h2>
 		<div id="cart-list"></div>
-		<form method="dialog">
-			<button class="btn btn-secondary">Cerrar</button>
-		</form>
+		<div class="d-flex justify-content-between align-items-center mt-3">
+			<button type="button" id="btn-clear-cart" class="btn btn-danger" disabled>Vaciar carrito</button>
+			<form method="dialog" class="m-0">
+				<button class="btn btn-secondary">Cerrar</button>
+			</form>
+		</div>
 	</dialog>
 
 </body>

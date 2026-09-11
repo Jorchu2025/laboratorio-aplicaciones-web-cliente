@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'cart';
+const STORAGE_KEY = "cart";
 
 export function initLocalStorage() {
   const cart = localStorage.getItem(STORAGE_KEY);
@@ -8,7 +8,8 @@ export function initLocalStorage() {
 }
 
 export function getFromLocalStorage() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY));
+  const cart = localStorage.getItem(STORAGE_KEY);
+  return cart ? JSON.parse(cart) : [];
 }
 
 export function saveToLocalStorage(item) {
@@ -19,6 +20,10 @@ export function saveToLocalStorage(item) {
 
 export function setItemToLocalStorage(items) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+}
+
+export function clearLocalStorage() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
 }
 
 export function updateItemStorage(itemId, qtty) {
