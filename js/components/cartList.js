@@ -3,6 +3,7 @@ import {
   getFromLocalStorage,
   clearLocalStorage,
 } from "../storage/storage.js";
+import { toast } from "./toast.js";
 
 export function cartList() {
   const cartListContainer = document.querySelector("#cart-list");
@@ -57,9 +58,11 @@ export function cartList() {
 }
 
 const clearCartBtn = document.querySelector("#btn-clear-cart");
+
 if (clearCartBtn) {
   clearCartBtn.addEventListener("click", () => {
     clearLocalStorage();
     cartList();
+    toast("El carrito ha sido vaciado.");
   });
 }
