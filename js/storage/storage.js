@@ -13,10 +13,24 @@ export function getFromLocalStorage() {
 }
 
 export function saveToLocalStorage(item) {
+
   const cart = getFromLocalStorage();
-  cart.push(item);
+
+  const existingItem = cart.find((product) => product.id === item.id);
+
+  if (existingItem) {
+    existingItem.qtty = Number(existingItem.qtty || 1) + 1;
+  } else {
+    cart.push({
+      ...item,
+      qtty: 1,
+    });
+  }
+
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+
 }
+
 
 export function setItemToLocalStorage(items) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));

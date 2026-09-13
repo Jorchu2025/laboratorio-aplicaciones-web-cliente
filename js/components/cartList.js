@@ -15,6 +15,8 @@ export function cartList() {
 
   if (dataStorage.length === 0) {
     cartListContainer.innerHTML = "<p>Tu carrito está vacío.</p>";
+    document.querySelector("#cart-total").innerHTML = "Total del carrito: $0.00";
+    
     if (clearCartBtn) {
       clearCartBtn.disabled = true;
     }
