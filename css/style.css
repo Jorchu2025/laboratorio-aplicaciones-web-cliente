@@ -1,11 +1,16 @@
 main {
-    border: solid black;
     padding: 10px;
     justify-items: center;
 }
 
 .card {
     height: 100%;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border: 1px solid #000;
 }
 
 .card-img-top {

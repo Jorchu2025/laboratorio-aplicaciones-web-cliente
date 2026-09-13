@@ -12,7 +12,7 @@ function createCategoryButton(category) {
 
   return `
     <input type="radio" class="btn-check" name="categories" id="${id}" autocomplete="off">
-    <label class="btn btn-secondary" for="${id}">${text}</label>
+    <label class="btn btn-secondary category" for="${id}">${text}</label>
   `;
 }
 

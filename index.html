@@ -6,11 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 		crossorigin="anonymous"></script>
 
+	<script type="module" defer src="js/index.js"></script>
 	<script type="module" defer src="js/api/api.js"></script>
 	<script type="module" src="js/products/products.js"></script>
 	<script type="module" src="/js/app.js" defer></script>
@@ -26,7 +28,6 @@
 	</header>
 
 	<main>
-		<p>Bienvenidos a nuestra tienda online.</p>
 		<div class="container m-4" id="categories">
 			<h5 class="my-3">Categorías</h5>
 			<div class="d-flex flex-wrap gap-1 row-gap-1" id="category-buttons"></div>
@@ -35,9 +36,13 @@
 			<input type="text" id="search-input" class="form-control" placeholder="Buscar productos...">
 		</div>
 		<div id="prod-container" class="row container container-fluid gap-3"></div>
-			
 
-				</div>
+
+
+		<!-- Toasts -->
+		<div class="toast-container position-fixed top-0 end-0 p-3">
+			<!-- generado desde js -->
+		</div>
 	</main>
 	<dialog id="detalle" class="modal-detalle">
 		<div class="modal-detalle-contenido">
@@ -63,28 +68,18 @@
 	</dialog>
 	<dialog id="carrito" class="modal-cart">
 
-    <h2>Tu carrito</h2>
+		<h2>Tu carrito</h2>
+		<div id="cart-list"></div>
+		<div class="d-flex justify-content-between align-items-center mt-3">
+			<button type="button" id="btn-clear-cart" class="btn btn-danger" disabled>Vaciar carrito</button>
+			<form method="dialog" class="m-0">
+				<button class="btn btn-secondary">Cerrar</button>
+			</form>
+		</div>
+	</dialog>
 
-    <div id="carrito-contenido">
 
-        <p id="carrito-vacio">Tu carrito está vacío.</p>
 
-        <div id="lista-carrito">
-            <!-- Aquí aparecerán los productos -->
-        </div>
-
-        <div id="carrito-total">
-            <strong>Total: $0</strong>
-        </div>
-
-    </div>
-
-    <form method="dialog">
-        <button class="btn btn-secondary">Cerrar</button>
-    </form>
-
-</dialog>
-<script type="module" src="/js/products/products.js"></script>
 </body>
 
 </html>
