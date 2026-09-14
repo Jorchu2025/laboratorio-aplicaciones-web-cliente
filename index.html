@@ -44,28 +44,37 @@
 			<!-- generado desde js -->
 		</div>
 	</main>
-	<dialog id="detalle" class="modal-detalle">
-		<div class="modal-detalle-contenido">
+	 <dialog id="detalle" class="modal-detalle">
+    <div class="modal-detalle-contenido">
 
-			<h2>Detalle del producto</h2>
+        <button type="button" class="btn-cerrar-modal">×</button>
 
-			<img src="/public/images/apple.webp" alt="Imagen del producto" class="modal-detalle-imagen">
+        <h2>Detalle del producto</h2>
 
-			<h3>Nombre del producto</h3>
+        <img src="/public/images/apple.webp"
+            alt="Imagen del producto"
+            class="modal-detalle-imagen">
 
-			<p class="modal-detalle-precio">$99.999</p>
+        <h3>Nombre del producto</h3>
 
-			<p class="modal-detalle-descripcion">
-				Descripción del producto. Aquí se mostrará información
-				detallada sobre sus características.
-			</p>
+        <p class="modal-detalle-precio">$99.999</p>
 
-			<form method="dialog">
-				<button class="btn btn-secondary">Cerrar</button>
-			</form>
+        <p class="modal-detalle-descripcion">
+            Descripción del producto. Aquí se mostrará información
+            detallada sobre sus características.
+        </p>
 
-		</div>
-	</dialog>
+        <button type="button" class="btn btn-primary" id="btn-agregar-modal">
+            Agregar al carrito
+        </button>
+
+        <form method="dialog">
+            <button class="btn btn-secondary">Cerrar</button>
+        </form>
+
+    </div>
+</dialog>
+
 	<dialog id="carrito" class="modal-cart">
 
 		<h2>Tu carrito</h2>
@@ -86,3 +95,4 @@
 </body>
 
 </html>
+

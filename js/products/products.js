@@ -6,21 +6,52 @@ let products = [];
 
 function renderCards(products) {
   prodContainer.innerHTML = "";
+
   for (let p of products) {
     prodContainer.innerHTML += `
       <div class="card" style="width: 18rem;">
-        <img src="${p.image}" class="card-img-top" alt="...">
+        <img src="${p.image}" class="card-img-top" alt="${p.title}">
         <div class="card-body">
           <h5 class="card-title">${p.title}</h5>
           <p class="card-text">${p.description}</p>
+
           <button type="button" class="btn btn-primary btn-agregar">
-    Agregar al carrito
-</button>
+            Agregar al carrito
+          </button>
+
+          <button type="button" class="btn btn-secondary btn-detalle" data-id="${p.id}">
+            Ver detalle
+          </button>
         </div>
       </div>
     `;
   }
+
+  document.querySelectorAll(".btn-detalle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = Number(button.dataset.id);
+      const product = products.find((p) => p.id === productId);
+
+      const detalle = document.getElementById("detalle");
+
+      document.querySelector(".modal-detalle-imagen").src = product.image;
+      document.querySelector(".modal-detalle-imagen").alt = product.title;
+      document.querySelector(".modal-detalle-contenido h3").innerText = product.title;
+      document.querySelector(".modal-detalle-precio").innerText = `$${product.price}`;
+      document.querySelector(".modal-detalle-descripcion").innerText = product.description;
+
+      detalle.showModal();
+
+      const agregarModal = document.getElementById("btn-agregar-modal");
+
+agregarModal.onclick = () => {
+  saveToLocalStorage(product);
+  detalle.close();
+};
+    });
+  });
 }
+
 
 async function getProducts() {
   products = await getData();
@@ -33,6 +64,9 @@ document.querySelectorAll(".btn-agregar").forEach((button, index) => {
         saveToLocalStorage(products[index]);
     });
 });
+
+
+
 
 
 
@@ -51,13 +85,4 @@ searchInput.addEventListener("input", function () {
 
 export { products, renderCards };
 
-// modal de detalle del producto
-let detalle = document.getElementById("detalle");
-detalle.addEventListener("showmodal", function (e) {
-  let product = e.target.dataset.product;
-  let data = JSON.parse(product);
-  document.querySelector(".modal-detalle-imagen").src = data.image;
-  document.querySelector(".modal-detalle-precio").innerText = data.price;
-  document.querySelector(".modal-detalle-descripcion").innerText =
-    data.description;
-});
+
