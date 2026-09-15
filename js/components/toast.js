@@ -1,6 +1,6 @@
 export function toast(message) {
   const template = `
-    <div class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="2000">
       <div class="d-flex">
         <div class="toast-body">
           ${message}
@@ -11,10 +11,11 @@ export function toast(message) {
   `;
 
   const toastContainer = document.querySelector('.toast-container');
-  toastContainer.innerHTML += template;
+
+  toastContainer.insertAdjacentHTML("beforeend", template);
 
   const toasts = document.querySelectorAll('.toast');
   const lastToast = toasts[toasts.length - 1];
-  const bootstrapToast = new bootstrap.Toast(lastToast, { delay: 3000 });
+  const bootstrapToast = new bootstrap.Toast(lastToast);
   bootstrapToast.show();
 }

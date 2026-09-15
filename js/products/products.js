@@ -51,7 +51,10 @@ function renderCards(products) {
       const agregarModal = document.getElementById("btn-agregar-modal");
 
 agregarModal.onclick = () => {
-  addToCart(product);
+  const inputCantidad = document.querySelector(`#contador-${product.id}`);
+  const qtty = parseInt(inputCantidad.textContent);
+  addToCart(product, qtty);
+
   detalle.close();
 };
     });
@@ -67,12 +70,7 @@ await getProducts();
 document.querySelectorAll(".btn-agregar").forEach((button, index) => {
     button.addEventListener("click", () => {
       const prod = products[index];
-      const idx = updateItemStorage(prod.id, 1);
-      if (idx === -1) {
-        prod.qtty = 1;
-        saveToLocalStorage(prod);
-      }
-      cartList();
+      addToCart(prod, 1);
     });
 });
 
