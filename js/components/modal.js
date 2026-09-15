@@ -3,7 +3,7 @@ import { cartList } from './cartList.js';
 import { toast } from './toast.js';
 
 // Para llamar desde click listener del botón "Agregar al carrito"
-function addToCart(prod) {
+export function addToCart(prod) {
   const inputCantidad = document.querySelector(`#contador-${prod.id}`);
   const qtty = parseInt(inputCantidad.textContent);
 

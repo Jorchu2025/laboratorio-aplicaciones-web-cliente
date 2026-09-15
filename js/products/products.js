@@ -1,5 +1,8 @@
 import { getData } from "/js/api/api.js";
-import { saveToLocalStorage } from "../storage/storage.js";
+import { saveToLocalStorage, updateItemStorage } from "../storage/storage.js";
+import { addToCart } from "../components/modal.js";
+import { addEventListeners, contador } from '../components/contador.js';
+import { cartList } from '../components/cartList.js';
 
 let prodContainer = document.getElementById("prod-container");
 let products = [];
@@ -40,18 +43,20 @@ function renderCards(products) {
       document.querySelector(".modal-detalle-precio").innerText = `$${product.price}`;
       document.querySelector(".modal-detalle-descripcion").innerText = product.description;
 
+      document.querySelector('#contador-container').innerHTML = contador(product.id);
+      addEventListeners(product.id);
+
       detalle.showModal();
 
       const agregarModal = document.getElementById("btn-agregar-modal");
 
 agregarModal.onclick = () => {
-  saveToLocalStorage(product);
+  addToCart(product);
   detalle.close();
 };
     });
   });
 }
-
 
 async function getProducts() {
   products = await getData();
@@ -61,7 +66,13 @@ async function getProducts() {
 await getProducts();
 document.querySelectorAll(".btn-agregar").forEach((button, index) => {
     button.addEventListener("click", () => {
-        saveToLocalStorage(products[index]);
+      const prod = products[index];
+      const idx = updateItemStorage(prod.id, 1);
+      if (idx === -1) {
+        prod.qtty = 1;
+        saveToLocalStorage(prod);
+      }
+      cartList();
     });
 });
 
