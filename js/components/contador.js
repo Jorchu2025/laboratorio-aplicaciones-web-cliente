@@ -1,10 +1,8 @@
 export function contador(id) {
   const template = `
-    <div class="d-flex justify-content-center align-items-center gap-3 my-3">
     <button id="btn-decrement-${id}" class="btn btn-dark">-</button>
     <span id="contador-${id}"></span>
     <button id="btn-increment-${id}" class="btn btn-dark">+</button>
-    </div>
   `;
 
   return template;

@@ -18,6 +18,7 @@ export function saveToLocalStorage(item) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 }
 
+
 export function setItemToLocalStorage(items) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
 }
@@ -30,7 +31,7 @@ export function updateItemStorage(itemId, qtty) {
   const dataStorage = getFromLocalStorage();
   const idx = dataStorage.findIndex((item) => item.id === itemId);
   if (idx > -1) {
-    dataStorage[idx].qtty += qtty;
+    dataStorage[idx].qtty = Number(dataStorage[idx].qtty) + qtty;
     setItemToLocalStorage(dataStorage);
   }
   return idx;

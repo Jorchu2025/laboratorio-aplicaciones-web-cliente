@@ -15,21 +15,28 @@
 	<script type="module" defer src="js/index.js"></script>
 	<script type="module" defer src="js/api/api.js"></script>
 	<script type="module" src="js/products/products.js"></script>
+	<script type="module" src="/js/app.js" defer></script>
 	<script type="module" src="js/components/categories.js"></script>
 	<title>Mi Tienda</title>
 </head>
 
 <body>
 
-	<header class="bg-light border-bottom">
-		<nav class="container d-flex justify-content-between align-items-center py-3" aria-label="Navegación principal">
-			<h1 class="h4 mb-0">Mi Tienda</h1>
-			<button type="button"class="btn btn-primary d-flex align-items-center gap-2" onclick="carrito.showModal()">
-				<i class="bi bi-cart3" aria-hodden="true"></i>
-				<span>Carrito</span>
-			</button>
-		</nav>
-	</header>
+<header class="bg-light border-bottom">
+    <nav class="container d-flex justify-content-between align-items-center py-3"
+         aria-label="Navegación principal">
+        <h1 class="h4 mb-0">Mi Tienda</h1>
+
+        <button
+            type="button"
+            id="btn-carrito"
+            class="btn btn-primary d-flex align-items-center gap-2"
+        >
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span>Carrito</span>
+        </button>
+    </nav>
+</header>
 
 	<main>
 		<p>Bienvenidos a nuestra tienda online.</p>
@@ -56,6 +63,8 @@
 			<div id="prod-container" class="row container container-fluid gap-3"></div>
 		</section>
 
+
+
 		<!-- Toasts -->
 		<div class="toast-container position-fixed top-0 end-0 p-3">
 			<!-- generado desde js -->
@@ -66,9 +75,11 @@
 		<p>&copy; 2026 Mi Tienda</p>
 	</footer>
 
-
 	<dialog id="detalle" class="modal-detalle">
 		<div class="modal-detalle-contenido">
+			<button type="button" class="btn-cerrar-modal"
+					aria-label="Cerrar detalle">×</button>
+
 			<h2>Detalle del producto</h2>
 
 			<img
@@ -86,6 +97,15 @@
 				detallada sobre sus características.
 			</p>
 
+			<div id="contador-container"
+				class="d-flex justify-content-center align-items-center gap-3 my-3">
+				<!-- generado desde js -->
+			</div>
+
+			<button type="button" class="btn btn-primary" id="btn-agregar-modal">
+				Agregar al carrito
+			</button>
+
 			<form method="dialog">
 				<button class="btn btn-secondary">Cerrar</button>
 			</form>
@@ -93,8 +113,12 @@
 	</dialog>
 
 	<dialog id="carrito" class="modal-cart">
+
 		<h2>Tu carrito</h2>
 		<div id="cart-list"></div>
+		<div id="cart-total" class="text-end fw-bold fs-5 mt-3">
+         Total: $0.00
+         </div>
 		<div class="d-flex justify-content-between align-items-center mt-3">
 			<button type="button" id="btn-clear-cart" class="btn btn-danger" disabled>Vaciar carrito</button>
 			<form method="dialog" class="m-0">
@@ -104,4 +128,5 @@
 	</dialog>
 
 </body>
+
 </html>
