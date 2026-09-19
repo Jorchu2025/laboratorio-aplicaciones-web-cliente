@@ -198,3 +198,19 @@ main {
     transform: none;
 }
 
+.navbar-search {
+    flex: 1;
+    max-width: 400px;
+}
+
+@media (max-width:575.98px) {
+    .navbar-search {
+        flex-basis: 100%;
+        max-width: none;
+        order: 1;
+    }
+
+    .navbar-search .form-control {
+        max-width: none;
+    }
+}
