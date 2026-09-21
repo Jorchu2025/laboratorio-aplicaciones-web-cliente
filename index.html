@@ -15,18 +15,17 @@
 	<script type="module" defer src="js/index.js"></script>
 	<script type="module" defer src="js/api/api.js"></script>
 	<script type="module" src="js/products/products.js"></script>
-	<script type="module" src="/js/app.js" defer></script>
 	<script type="module" src="js/components/categories.js"></script>
 	<title>Mi Tienda</title>
 </head>
 
 <body>
 
-<header class="bg-light border-bottom">
+<header class="store-header">
     <nav class="container d-flex flex-wrap justify-content-between align-items-center gap-3 py-3"
          aria-label="Navegación principal">
-        <h1 class="h4 mb-0 d-flex align-items-center gap-2">
-			<i class="bi bi-shop text-primary" aria-hidden="truw"></i>
+        <h1 class="store-brand h4 mb-0 d-flex align-items-center gap-2">
+			<i class="bi bi-shop text-primary" aria-hidden="true"></i>
 			<span>Mi Tienda</span>
 		</h1>
 
@@ -45,10 +44,11 @@
         <button
             type="button"
             id="btn-carrito"
-            class="btn btn-primary d-flex align-items-center gap-2"
+            class="cart-button btn btn-primary d-flex align-items-center gap-2"
         >
             <i class="bi bi-cart3" aria-hidden="true"></i>
             <span>Carrito</span>
+			<span id="cart-count" class="cart-badge">0</span>
         </button>
     </nav>
 </header>

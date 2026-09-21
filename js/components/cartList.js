@@ -11,6 +11,11 @@ export function cartList() {
   const clearCartBtn = document.querySelector("#btn-clear-cart");
   let template = "";
   const dataStorage = getFromLocalStorage() || [];
+  const totalUnidades = dataStorage.reduce((total, producto) => {
+    return total + Number(producto.qtty);
+  }, 0);
+
+  document.getElementById("cart-count").textContent = totalUnidades;
   let totalCarrito = 0;
 
   if (dataStorage.length === 0) {
