@@ -12,19 +12,23 @@ function renderCards(products) {
 
   for (let p of products) {
     prodContainer.innerHTML += `
-      <div class="card" style="width: 18rem;">
-        <img src="${p.image}" class="card-img-top" alt="${p.title}">
-        <div class="card-body">
-          <h5 class="card-title">${p.title}</h5>
-          <p class="card-text">${p.description}</p>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="${p.image}" class="card-img-top" alt="${p.title}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${p.title}</h5>
+            <p class="card-text">${p.description}</p>
 
-          <button type="button" class="btn btn-primary btn-agregar">
-            Agregar al carrito
-          </button>
+            <div class="mt-auto d-flex flex-column gap-2">
+              <button type="button" class="btn btn-primary btn-agregar">
+                Agregar al carrito
+              </button>
 
-          <button type="button" class="btn btn-secondary btn-detalle" data-id="${p.id}">
-            Ver detalle
-          </button>
+              <button type="button" class="btn btn-secondary btn-detalle" data-id="${p.id}">
+                Ver detalle
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     `;
