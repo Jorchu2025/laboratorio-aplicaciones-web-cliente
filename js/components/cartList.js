@@ -16,6 +16,7 @@ export function cartList() {
   }, 0);
 
   document.getElementById("cart-count").textContent = totalUnidades;
+document.getElementById("cart-count").classList.toggle("d-none", totalUnidades === 0);
   let totalCarrito = 0;
 
   if (dataStorage.length === 0) {
