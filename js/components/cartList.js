@@ -30,7 +30,7 @@ export function cartList() {
       template += `
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
               <img src="${item.image}" class="img-fluid rounded-start" style="object-fit: contain; height: 150px;" alt="${item.title}">
             </div>
             <div class="col-md-8">
