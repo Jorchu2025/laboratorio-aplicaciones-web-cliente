@@ -32,7 +32,8 @@ document.getElementById("cart-count").classList.toggle("d-none", totalUnidades =
     }
 
     dataStorage.forEach((item) => {
-      totalCarrito += item.price * item.qtty;
+      const subtotal = item.price * item.qtty;
+      totalCarrito += subtotal;
       template += `
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
@@ -48,7 +49,9 @@ document.getElementById("cart-count").classList.toggle("d-none", totalUnidades =
               <button class="btn btn-outline-secondary btn-sumar" data-id="${item.id}">+</button>
               </div>
                 <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-body-secondary">Total: $${(item.price * item.qtty).toFixed(2)}</small>
+                  <small class="text-body-secondary">
+                    Precio unitario: $${Number(item.price).toFixed(2)} | Subtotal: $${subtotal.toFixed(2)}
+                  </small>
                   <button class="btn btn-outline-danger border-0" id="delete-item-${item.id}"><i class="bi bi-trash-fill"></i></button>
                 </div>
               </div>
