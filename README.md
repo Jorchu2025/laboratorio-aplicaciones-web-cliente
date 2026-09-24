@@ -11,8 +11,8 @@
  Incorporó Bootstrap, diseñó las cards y conectó el proyecto con FakeStoreAPI. Sumó filtro por texto, estilos para el buscador, animaciones hover y botón para limpiar el carrito y su notificación toast.
 
 ### Lautaro De Filippo / lautidfi 
- persistencia en LocalStorage, funciones de alta/baja/modificación de ítems, la funcionalidad de agregar al carrito con notificaciones toast y el componente de cantidad de unidades con precio total según cantidad. También implementó el filtrado por categorías y 
+ persistencia en LocalStorage, funciones de alta/baja/modificación de ítems, la funcionalidad de agregar al carrito con notificaciones toast y el componente de cantidad de unidades con precio total según cantidad. También implementó el filtrado por categorías
 
-### Giselle Barbera / Giselle Barbera 
+### Giselle Barbera / GiselleBarberaIST 
 
 maquetado inicial, icono de tienda, buscador y contador de ítems del carrito que se oculta cuando está vacío. Adaptó el catálogo a diseño responsive, centró las imágenes del carrito y mostró precio unitario y subtotal.
